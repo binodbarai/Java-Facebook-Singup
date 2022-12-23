@@ -34,10 +34,8 @@ public class SignupUsingSwing extends JFrame {
 
 
 
-        /*========== NAME ==========*/
-        // first name textField for name textField
+
         firstname = new JTextField();
-        //firstname.setBorder(new LineBorder(Color.gray,1,true));
         firstname.setText("First Name");
         firstname.addFocusListener(new FocusListener() {
             @Override
@@ -80,7 +78,6 @@ public class SignupUsingSwing extends JFrame {
 
 
 
-        /*========== EMAIL/PHONE ==========*/
         email_OR_Phone = new JTextField();
         email_OR_Phone.setText("Mobile number or email");
         email_OR_Phone.addFocusListener(new FocusListener() {
@@ -102,7 +99,7 @@ public class SignupUsingSwing extends JFrame {
         add(email_OR_Phone);
 
 
-        /*========== PASSWORD ==========*/
+
         password = new JPasswordField();
         password.setText("New Password");
         password.addFocusListener(new FocusListener() {
@@ -124,8 +121,7 @@ public class SignupUsingSwing extends JFrame {
         add(password);
 
 
-        /*========== BIRTHDAY ==========*/
-        //label for birthday option
+
         birthday = new JLabel("Birthday");
         birthday.setFont(new Font("Arial", Font.PLAIN,14));
         birthday.setForeground(Color.GRAY);
@@ -157,8 +153,7 @@ public class SignupUsingSwing extends JFrame {
         add(year);
 
 
-        /*========== GENDER ==========*/
-        //label for birthday option
+
         gender = new JLabel("Gender");
         gender.setFont(new Font("Arial", Font.PLAIN,14));
         gender.setForeground(Color.GRAY);
@@ -166,6 +161,8 @@ public class SignupUsingSwing extends JFrame {
         add(gender);
 
         //Radio button to choose gender
+        ButtonGroup group = new ButtonGroup();
+
         female= new JRadioButton("Female");
         female.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
         female.setBounds(20,370,140,35);
@@ -179,9 +176,11 @@ public class SignupUsingSwing extends JFrame {
         custom.setBounds(320,370,140,35);
         add(custom);
 
+        group.add(female);group.add(male);group.add(custom);
 
 
-        /*========== FOOTER TEXT ==========*/
+
+
         footerText = new JTextArea();
         footerText.setText("People who use our service may have uploaded your contact information to\nFacebook. Learn more.");
         footerText.setFont(new Font("Arial", Font.PLAIN, 13));
@@ -211,10 +210,6 @@ public class SignupUsingSwing extends JFrame {
 
         setVisible(true);
     }
-
-
-
-
 
     public static void main(String[] args) {
         SignupUsingSwing fb = new SignupUsingSwing();
